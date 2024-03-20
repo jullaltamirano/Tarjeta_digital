@@ -1,0 +1,13 @@
+---
+import Profile from '../sections/Profile.astro';
+import { Buttons } from '../sections/Buttons.tsx';
+import { userData } from '../userData';
+
+const { user }: any = Astro.params;
+---
+
+<Profile data={userData[user]} />
+<Buttons
+   client:visible
+   data={userData[user]}
+/>
