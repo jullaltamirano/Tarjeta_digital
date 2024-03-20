@@ -32,27 +32,24 @@ export const Buttons = (props) => {
 
    // MÉTODO PARA AGREGAR CONTACTO
    const handleAddContact = (name, phoneNumber) => {
-      alert(name);
       if ('contacts' in navigator) {
          // Objeto de contacto
          const contact = {
             name: [{ displayName: name }],
             phoneNumbers: [{ value: phoneNumber }],
          };
-
-         alert(contact.phoneNumbers)
          
          // Solicitar al usuario agregar el contacto
          navigator.contacts.save(contact).then(
             () => {
-              console.log('Contacto guardado exitosamente');
+              alert('Contacto guardado exitosamente');
             },
             (err) => {
-              console.error('Error al guardar el contacto:', err);
+              alert('Error al guardar el contacto:', err);
             }
          );
       } else {
-         console.error('La API de contactos no está disponible en este navegador.');
+         alert('La API de contactos no está disponible en este navegador.');
       }
     };
 
