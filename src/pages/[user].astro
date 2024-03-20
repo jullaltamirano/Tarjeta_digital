@@ -10,7 +10,7 @@ export function getStaticPaths() {
 }
 ---
 
-<div class='min-h-screen bg-btns'>
+<div class='min-h-screen bg-portada'>
    <Profile data={userData[user]} />
    <Buttons
       client:visible
@@ -20,7 +20,8 @@ export function getStaticPaths() {
 
 <style is:global>
    .btn-blue {
-      background-color: #002c84;
+      background-color: white;
+      color: #002c84;
    }
 
    .btn-blue:hover {
@@ -35,11 +36,19 @@ export function getStaticPaths() {
       background-color: #323344;
    }
 
-   .bg-btns {
-      background-image: url('/bg-main.webp');
+   .bg-portada {
+      background-image: url('/bg-portada.webp');
       background-position: center;
-      background-size: auto;
-      background-color: rgba(255,255,255,0.9);
-      background-blend-mode: hard-light;
+      background-size: cover;
+      background-color: rgba(0, 44, 132, 0.7);
+      background-blend-mode: darken;
+   }
+
+   .bg-profile {
+      background-image: url('/trama-profile.webp');
+      background-position: center;
+      background-size: cover;
+      background-color: rgba(0, 44, 132, 0.8);
+      background-blend-mode: color;
    }
 </style>

@@ -10,7 +10,7 @@ export const ButtonAction = (props) => {
             className='rounded-full p-7 shadow-lg transition-all btn-blue hover:scale-105'>
             {icon}
          </a>
-         <span className='font-semibold text-4xl text-center'>{label}</span>
+         <span className='font-semibold text-4xl text-center text-white'>{label}</span>
       </div>
    );
 };
