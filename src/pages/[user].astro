@@ -10,8 +10,10 @@ export function getStaticPaths() {
 }
 ---
 
-<Profile data={userData[user]} />
-<Buttons
-   client:visible
-   data={userData[user]}
-/>
+<div id='root'>
+   <Profile data={userData[user]} />
+   <Buttons
+      client:visible
+      data={userData[user]}
+   />
+</div>
