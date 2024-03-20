@@ -53,9 +53,9 @@ export const Buttons = (props) => {
     };
 
    const buttonsData = [
-      { label: 'Llamar', function: handleLlamarClick, icon: <BiSolidPhoneCall size={'3em'} className='text-white' /> },
-      { label: 'Correo', function: handleEmailClick, icon: <MdEmail size={'3em'} className='text-white' /> },
-      { label: 'Whatsapp', function: handleWhatsappClick, icon: <IoLogoWhatsapp size={'3em'} className='text-white' /> },
+      { label: 'Llamar', function: handleLlamarClick, icon: <BiSolidPhoneCall size={'3em'} className='text-white' />, href: `tel:${data.codigo_telefono}${data.telefono}` },
+      { label: 'Correo', function: handleEmailClick, icon: <MdEmail size={'3em'} className='text-white' />, href: `mailto:${data.email}` },
+      { label: 'Whatsapp', function: handleWhatsappClick, icon: <IoLogoWhatsapp size={'3em'} className='text-white' />, href: data.whatsapp },
       { label: 'Compartir contacto', function: handleShareClick, icon: <IoMdShare size={'3em'} className='text-white' /> },
    ];
 
@@ -67,6 +67,7 @@ export const Buttons = (props) => {
                   label={btn.label}
                   btnFunction={btn.function}
                   icon={btn.icon}
+                  href={btn.href}
                />
             </div>
          ))}
