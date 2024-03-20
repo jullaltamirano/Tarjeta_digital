@@ -1,5 +1,6 @@
 import { useState } from 'react';
 
+import QRCode from 'qrcode.react';
 import { BiSolidPhoneCall } from 'react-icons/bi';
 import { MdEmail } from "react-icons/md";
 import { IoLogoWhatsapp } from "react-icons/io";
@@ -80,13 +81,14 @@ export const Buttons = (props) => {
          </div>
 
          {openModal && (
-            <div className="fixed left-0 top-0 flex h-full w-full items-center justify-center bg-black bg-opacity-50 py-10">
-               <div className="max-h-full w-full max-w-md overflow-y-auto rounded-2xl bg-white">
-                  <span className='float-right font-semibold text-zinc-600 mx-5 mt-2' role='button' onClick={() => setOpenModal(false)}>X</span>
-                  <div className="w-full">
-                     <div className="m-8 max-w-[400px] mx-auto">
+            <div class="fixed left-0 top-0 flex h-full w-full items-center justify-center bg-black bg-opacity-50 py-10">
+               <div class="max-h-full w-full max-w-md overflow-y-auto rounded-2xl bg-white">
+                  <span className='float-right font-semibold text-zinc-700 mx-8 mt-5 text-4xl' role='button' onClick={() => setOpenModal(false)}>X</span>
+                  <div class="w-full">
+                     <div class="m-8 my-20 max-w-[500px] mx-auto">
                         <div className="flex justify-center items-center">
-                           <img src={data.qr} alt={data.nombres} />
+                           <QRCode value={window.location.pathname}  style={{width: '300px', height: '300px'}}/>
+                           {/* <img src={data.qr} alt={data.nombres} /> */}
                         </div>
                      </div>
                   </div>
