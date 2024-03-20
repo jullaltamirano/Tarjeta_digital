@@ -39,6 +39,8 @@ export const Buttons = (props) => {
             phoneNumbers: [{ value: phoneNumber }],
          };
          
+         alert(navigator.contacts)
+         
          // Solicitar al usuario agregar el contacto
          navigator.contacts.save(contact).then(
             () => {
