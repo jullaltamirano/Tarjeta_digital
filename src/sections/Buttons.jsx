@@ -87,7 +87,7 @@ export const Buttons = (props) => {
                   <div class="w-full">
                      <div class="m-8 my-20 max-w-[500px] mx-auto">
                         <div className="flex justify-center items-center">
-                           <QRCode value={window.location.pathname}  style={{width: '300px', height: '300px'}}/>
+                           <QRCode value={`https://tarjeta-digital-d1mi.vercel.app/${window.location.pathname}`}  style={{width: '300px', height: '300px'}}/>
                            {/* <img src={data.qr} alt={data.nombres} /> */}
                         </div>
                      </div>
