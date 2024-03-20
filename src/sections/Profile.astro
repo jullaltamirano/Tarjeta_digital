@@ -4,10 +4,10 @@ const { data } = Astro.props;
 
 <section class='flex flex-col justify-center items-center bg-zinc-100 py-24'>
    <img
-      class='w-60 h-60 rounded-full mx-auto mb-10'
+      class=' w-80 h-80 rounded-full mx-auto mb-10'
       src='/user.webp'
       alt={data?.nombres}
    />
-   <h1 class='text-5xl border-b border-black py-4 px-4'><b>{data?.nombres}</b> {data?.apellidos}</h1>
-   <h2 class='text-2xl mt-3'>{data?.puesto}</h2> 
+   <h1 class='text-7xl border-b border-black py-4 px-4'><b>{data?.nombres}</b> {data?.apellidos}</h1>
+   <h2 class='text-4xl mt-3'>{data?.puesto}</h2> 
 </section>

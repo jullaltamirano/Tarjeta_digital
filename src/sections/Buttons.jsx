@@ -31,12 +31,15 @@ export const Buttons = (props) => {
 
    // MÉTODO PARA AGREGAR CONTACTO
    const handleAddContact = (name, phoneNumber) => {
+      alert(name);
       if ('contacts' in navigator) {
          // Objeto de contacto
          const contact = {
             name: [{ displayName: name }],
             phoneNumbers: [{ value: phoneNumber }],
          };
+
+         alert(contact.phoneNumbers)
          
          // Solicitar al usuario agregar el contacto
          navigator.contacts.save(contact).then(
@@ -53,16 +56,16 @@ export const Buttons = (props) => {
     };
 
    const buttonsData = [
-      { label: 'Llamar', function: handleLlamarClick, icon: <BiSolidPhoneCall size={'3em'} className='text-white' />, href: `tel:${data.codigo_telefono}${data.telefono}` },
-      { label: 'Correo', function: handleEmailClick, icon: <MdEmail size={'3em'} className='text-white' />, href: `mailto:${data.email}` },
-      { label: 'Whatsapp', function: handleWhatsappClick, icon: <IoLogoWhatsapp size={'3em'} className='text-white' />, href: data.whatsapp },
-      { label: 'Compartir contacto', function: handleShareClick, icon: <IoMdShare size={'3em'} className='text-white' /> },
+      { label: 'Llamar', function: handleLlamarClick, icon: <BiSolidPhoneCall size={'7em'} className='text-white' />, href: `tel:${data.codigo_telefono}${data.telefono}` },
+      { label: 'Correo', function: handleEmailClick, icon: <MdEmail size={'7em'} className='text-white' />, href: `mailto:${data.email}` },
+      { label: 'Whatsapp', function: handleWhatsappClick, icon: <IoLogoWhatsapp size={'7em'} className='text-white' />, href: data.whatsapp },
+      { label: 'Compartir contacto', function: handleShareClick, icon: <IoMdShare size={'7em'} className='text-white' /> },
    ];
 
    return (
-      <section className='grid grid-cols-4 py-12  px-6 md:px-20 lg:px-32 '>
+      <section className='grid grid-cols-4 py-32 px-6 md:px-20 lg:px-32 '>
          {buttonsData && buttonsData.map(btn => (
-            <div key={btn.label} className='col-span-2 flex justify-center mb-20 lg:col-span-1'>
+            <div key={btn.label} className='col-span-2 flex justify-center mb-32 lg:col-span-1'>
                <ButtonAction
                   label={btn.label}
                   btnFunction={btn.function}
@@ -72,8 +75,8 @@ export const Buttons = (props) => {
             </div>
          ))}
 
-         <div className='col-span-4 flex justify-center'>
-            <button className='px-10 py-2 rounded-2xl bg-zinc-800 text-white font-semibold flex items-center transition-all hover:scale-105' onClick={() => handleAddContact(`${data.nombres} ${data.apellidos}`, `${data.codigo_telefono}${data.telefono}`)}><FiPlusCircle size={'1.3em'} className='font-semibold' />&nbsp;GUARDAR CONTACTO</button>
+         <div className='col-span-4 flex justify-center h-full items-end'>
+            <button className='px-20 py-5 rounded-full bg-zinc-800 text-white font-semibold text-4xl flex items-center transition-all hover:scale-105' onClick={() => handleAddContact(`${data.nombres} ${data.apellidos}`, `${data.codigo_telefono}${data.telefono}`)}><FiPlusCircle size={'1.3em'} className='font-semibold' />&nbsp;&nbsp;GUARDAR CONTACTO</button>
          </div>
 
          {openModal && (
