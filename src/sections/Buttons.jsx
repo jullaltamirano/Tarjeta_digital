@@ -10,7 +10,7 @@ import { ButtonAction } from '../components/ButtonAction';
 
 export const Buttons = (props) => {
    const { data } = props;
-   const [openModal, setOpenModal] = useState<boolean>(false)
+   const [openModal, setOpenModal] = useState(false)
 
    // MÉTODOS BOTONES
    const handleLlamarClick = () => {

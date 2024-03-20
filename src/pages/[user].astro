@@ -1,9 +1,13 @@
 ---
 import Profile from '../sections/Profile.astro';
-import { Buttons } from '../sections/Buttons.tsx';
+import { Buttons } from '../sections/Buttons.jsx';
 import { userData } from '../userData';
 
-const { user }: any = Astro.params;
+const { user } = Astro.params;
+
+export function getStaticPaths() {
+   return [{ params: { user: 'jull-altamirano' } }];
+}
 ---
 
 <Profile data={userData[user]} />
