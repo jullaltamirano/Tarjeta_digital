@@ -10,10 +10,36 @@ export function getStaticPaths() {
 }
 ---
 
-<div id='root'>
+<div class='min-h-screen bg-btns'>
    <Profile data={userData[user]} />
    <Buttons
       client:visible
       data={userData[user]}
    />
 </div>
+
+<style is:global>
+   .btn-blue {
+      background-color: #002c84;
+   }
+
+   .btn-blue:hover {
+      background-color: #323344;
+   }
+
+   .bg-blue {
+      background-color: #002c84;
+   }
+
+   .bg-darkblue {
+      background-color: #323344;
+   }
+
+   .bg-btns {
+      background-image: url('/bg-main.webp');
+      background-position: center;
+      background-size: auto;
+      background-color: rgba(255,255,255,0.9);
+      background-blend-mode: hard-light;
+   }
+</style>

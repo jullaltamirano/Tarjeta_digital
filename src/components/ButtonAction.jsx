@@ -7,7 +7,7 @@ export const ButtonAction = (props) => {
             target='_blank'
             role='button'
             onClick={btnFunction}
-            className='rounded-full bg-red-500 p-7 shadow-lg transition-all hover:scale-105'>
+            className='rounded-full p-7 shadow-lg transition-all btn-blue hover:scale-105'>
             {icon}
          </a>
          <span className='font-semibold text-4xl text-center'>{label}</span>

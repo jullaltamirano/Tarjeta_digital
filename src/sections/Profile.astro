@@ -2,12 +2,20 @@
 const { data } = Astro.props;
 ---
 
-<section class='flex flex-col justify-center items-center bg-zinc-100 py-24'>
+<section class='flex flex-col justify-center items-center bg-blue py-24 text-white'>
    <img
-      class=' w-80 h-80 rounded-full mx-auto mb-10'
+      class='w-80 h-80 rounded-full mx-auto mb-10 border-8 border-amber-500'
       src='/user.webp'
       alt={data?.nombres}
    />
-   <h1 class='text-7xl border-b border-black py-4 px-4'><b>{data?.nombres}</b> {data?.apellidos}</h1>
-   <h2 class='text-4xl mt-3'>{data?.puesto}</h2> 
+   <h1 class='text-7xl border-b border-white py-4 px-4'><b>{data?.nombres}</b> {data?.apellidos}</h1>
+   <h2 class='text-4xl mt-3'>{data?.puesto}</h2>
 </section>
+
+<div class="flex justify-center">
+   <img
+      class='w-52 mt-16'
+      src='/logo-pm.webp'
+      alt='peru-masivo'
+   />
+</div>

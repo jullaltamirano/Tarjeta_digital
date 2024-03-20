@@ -93,9 +93,10 @@ export const Buttons = (props) => {
                </div>
             ))}
 
-         <div className='col-span-4 flex justify-center h-full items-end'>
+         {/* //* BOTÓN AGREGAR CONTACTO */}
+         {/* <div className='col-span-4 flex justify-center h-full items-end'>
             <ButtonDownloadPdf />
-         </div>
+         </div> */}
 
          {openModal && (
             <div class='fixed left-0 top-0 flex h-full w-full items-center justify-center bg-black bg-opacity-50 py-10'>
