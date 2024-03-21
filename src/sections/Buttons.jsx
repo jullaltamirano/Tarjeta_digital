@@ -77,7 +77,7 @@ export const Buttons = (props) => {
    ];
 
    return (
-      <section className='grid grid-cols-4 py-32 px-6 md:px-20 lg:px-32'>
+      <section className='grid grid-cols-4 pt-32 py-16 px-6 md:px-20 lg:px-32'>
          {buttonsData &&
             buttonsData.map((btn) => (
                <div
