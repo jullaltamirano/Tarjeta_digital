@@ -37,7 +37,7 @@ export const Buttons = (props) => {
          icon: (
             <BiSolidPhoneCall
                size={'7em'}
-               className='text-blue-900'
+               className='text-blue-900 hover:text-white'
             />
          ),
          href: `tel:${data.codigo_telefono}${data.telefono}`,
@@ -48,7 +48,7 @@ export const Buttons = (props) => {
          icon: (
             <MdEmail
                size={'7em'}
-               className='text-blue-900'
+               className='text-blue-900 hover:text-white'
             />
          ),
          href: `mailto:${data.email}`,
@@ -59,7 +59,7 @@ export const Buttons = (props) => {
          icon: (
             <IoLogoWhatsapp
                size={'7em'}
-               className='text-blue-900'
+               className='text-blue-900 hover:text-white'
             />
          ),
          href: data.whatsapp,
@@ -70,7 +70,7 @@ export const Buttons = (props) => {
          icon: (
             <IoMdShare
                size={'7em'}
-               className='text-blue-900'
+               className='text-blue-900 hover:text-white'
             />
          ),
       },
