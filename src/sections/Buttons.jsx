@@ -8,7 +8,6 @@ import { IoMdShare } from 'react-icons/io';
 import { FiPlusCircle } from 'react-icons/fi';
 
 import { ButtonAction } from '../components/ButtonAction';
-import { ButtonDownloadPdf } from '../components/ButtonDownloadPdf';
 
 export const Buttons = (props) => {
    const { data } = props;
@@ -38,7 +37,7 @@ export const Buttons = (props) => {
          icon: (
             <BiSolidPhoneCall
                size={'7em'}
-               className='text-white'
+               className='text-blue-900'
             />
          ),
          href: `tel:${data.codigo_telefono}${data.telefono}`,
@@ -49,7 +48,7 @@ export const Buttons = (props) => {
          icon: (
             <MdEmail
                size={'7em'}
-               className='text-white'
+               className='text-blue-900'
             />
          ),
          href: `mailto:${data.email}`,
@@ -60,7 +59,7 @@ export const Buttons = (props) => {
          icon: (
             <IoLogoWhatsapp
                size={'7em'}
-               className='text-white'
+               className='text-blue-900'
             />
          ),
          href: data.whatsapp,
@@ -71,14 +70,14 @@ export const Buttons = (props) => {
          icon: (
             <IoMdShare
                size={'7em'}
-               className='text-white'
+               className='text-blue-900'
             />
          ),
       },
    ];
 
    return (
-      <section className='grid grid-cols-4 py-32 px-6 md:px-20 lg:px-32 '>
+      <section className='grid grid-cols-4 py-32 px-6 md:px-20 lg:px-32'>
          {buttonsData &&
             buttonsData.map((btn) => (
                <div
@@ -99,16 +98,16 @@ export const Buttons = (props) => {
          </div> */}
 
          {openModal && (
-            <div class='fixed left-0 top-0 flex h-full w-full items-center justify-center bg-black bg-opacity-50 py-10'>
-               <div class='max-h-full w-full max-w-md overflow-y-auto rounded-2xl bg-white'>
+            <div className='fixed left-0 top-0 flex h-full w-full items-center justify-center bg-black bg-opacity-50 py-10'>
+               <div className='max-h-full w-full max-w-md overflow-y-auto rounded-2xl bg-white'>
                   <span
                      className='float-right font-semibold text-zinc-700 mx-8 mt-5 text-4xl'
                      role='button'
                      onClick={() => setOpenModal(false)}>
                      X
                   </span>
-                  <div class='w-full'>
-                     <div class='m-8 my-20 max-w-[500px] mx-auto'>
+                  <div className='w-full'>
+                     <div className='m-8 my-20 max-w-[500px] mx-auto'>
                         <div className='flex justify-center items-center'>
                            <QRCode
                               value={`https://tarjeta-digital-d1mi.vercel.app${window.location.pathname}`}

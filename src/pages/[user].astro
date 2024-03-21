@@ -1,6 +1,7 @@
 ---
 import Profile from '../sections/Profile.astro';
 import { Buttons } from '../sections/Buttons.jsx';
+import Footer from '../sections/Footer.astro';
 import { userData } from '../userData';
 
 const { user } = Astro.params;
@@ -10,18 +11,20 @@ export function getStaticPaths() {
 }
 ---
 
-<div class='min-h-screen bg-portada'>
-   <Profile data={userData[user]} />
-   <Buttons
-      client:visible
-      data={userData[user]}
-   />
+<div class='bg-black'>
+   <div class='min-h-screen bg-portada'>
+      <Profile data={userData[user]} />
+      <Buttons
+         client:visible
+         data={userData[user]}
+      />
+      <Footer />
+   </div>
 </div>
 
 <style is:global>
    .btn-blue {
       background-color: white;
-      color: #002c84;
    }
 
    .btn-blue:hover {
@@ -37,7 +40,7 @@ export function getStaticPaths() {
    }
 
    .bg-portada {
-      background-image: url('/bg-portada.webp');
+      background-image: url('/bg-vehiculo.webp');
       background-position: center;
       background-size: cover;
       background-color: rgba(0, 44, 132, 0.7);
@@ -50,5 +53,10 @@ export function getStaticPaths() {
       background-size: cover;
       background-color: rgba(0, 44, 132, 0.8);
       background-blend-mode: color;
+   }
+
+   .bg-black {
+      background-color: rgba(0, 0, 0, 0.3);
+      background-blend-mode: darken;
    }
 </style>
