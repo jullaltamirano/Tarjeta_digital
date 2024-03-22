@@ -4,7 +4,6 @@ export const ButtonAction = (props) => {
       <div className='flex flex-col items-center gap-5'>
          <a
             href={href}
-            target='_blank'
             role='button'
             onClick={btnFunction}
             className='rounded-full p-7 shadow-lg transition-all btn-blue hover:scale-105'>
