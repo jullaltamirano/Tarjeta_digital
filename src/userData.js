@@ -3,9 +3,10 @@ export const userData = {
       nombres: 'Jull',
       apellidos: 'Altamirano',
       puesto: 'Desarrollador de Sistemas',
-      empresa: 'Perú Masivo',
+      empresa: 'Peru Masivo',
       codigo_telefono: '+51',
       telefono: 931748317,
+      telefono_empresa: '01-2003000',
       whatsapp: 'https://wa.link/uh623u',
       anexo: '-',
       email: 'jullpa@perumasivo.net',
@@ -13,6 +14,5 @@ export const userData = {
       distrito: 'Magdalena',
       ciudad: 'Lima',
       país: 'Perú',
-      qr: '/qrcode-jull-altamirano.png',
    },
 };

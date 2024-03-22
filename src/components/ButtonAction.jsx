@@ -1,7 +1,7 @@
 export const ButtonAction = (props) => {
    const { label, btnFunction, icon, href } = props;
    return (
-      <div className='flex flex-col items-center gap-8'>
+      <div className='flex flex-col items-center gap-5'>
          <a
             href={href}
             target='_blank'
