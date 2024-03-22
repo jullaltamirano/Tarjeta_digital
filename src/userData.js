@@ -10,9 +10,9 @@ export const userData = {
       whatsapp: 'https://wa.link/uh623u',
       anexo: '-',
       email: 'jullpa@perumasivo.net',
-      dirección: 'Av. Antonio Miroquezada N° 457 Int 1201',
+      direccion: 'Av. Antonio Miroquezada #457 Int 1201',
       distrito: 'Magdalena',
       ciudad: 'Lima',
-      país: 'Perú',
+      pais: 'Peru',
    },
 };
