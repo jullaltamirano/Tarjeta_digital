@@ -70,7 +70,7 @@ export const Buttons = (props) => {
          href: data.whatsapp,
       },
       {
-         label: 'Compartir contacto',
+         label: 'Compartir QR',
          function: handleShareClick,
          icon: (
             <IoMdShare
@@ -87,7 +87,7 @@ export const Buttons = (props) => {
             buttonsData.map((btn) => (
                <div
                   key={btn.label}
-                  className='col-span-2 flex justify-center mb-12 lg:col-span-1'>
+                  className='col-span-2 flex justify-center mb-12'>
                   <ButtonAction
                      label={btn.label}
                      btnFunction={btn.function}
@@ -96,7 +96,7 @@ export const Buttons = (props) => {
                   />
                </div>
             ))}
-         <div className='col-span-4 flex justify-center mb-12 lg:col-span-1'>
+         <div className='col-span-4 flex justify-center mb-12'>
             <ButtonAction
                label={'Información de Empresa'}
                btnFunction={handleInfoClick}
