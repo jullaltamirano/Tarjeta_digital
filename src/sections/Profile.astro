@@ -1,8 +1,20 @@
 ---
+import QRCodeComponent from '../components/QRCodeComponent';
+
 const { data } = Astro.props;
 ---
 
-<section class='flex flex-col justify-center items-center pt-20 py-12 text-white'>
+<div class='flex items-center justify-between py-10 px-10'>
+   <img
+      class='h-24'
+      src='/pm-blanco.webp'
+      alt='peru-masivo'
+   />
+   <div class="">
+      <QRCodeComponent client:only />
+   </div>
+</div>
+<section class='flex flex-col justify-center items-center text-white'>
    <img
       class='w-80 h-80 rounded-full mx-auto mb-10 border-8 border-amber-500'
       src={data?.img_link || '/user.webp'}
@@ -10,12 +22,9 @@ const { data } = Astro.props;
    />
    <h1 class='text-7xl border-b border-white py-4 px-4'><b>{data?.nombres}</b> {data?.apellidos}</h1>
    <h2 class='text-4xl mt-3'>{data?.puesto}</h2>
+   <a
+      href=`tel:${data?.telefono}`
+      class='text-4xl mt-3'
+      >{data?.codigo_telefono} {data?.telefono}</a
+   >
 </section>
-
-<div class="flex justify-center">
-   <img
-      class='w-72'
-      src='/pm-blanco.webp'
-      alt='peru-masivo'
-   />
-</div>
