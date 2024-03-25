@@ -1,12 +1,13 @@
 ---
+
 const { data } = Astro.props;
 ---
 
 <section class='flex flex-col justify-center items-center text-white pt-24'>
    <span class='text-[50px]'>PERÚ MASIVO</span>
    <h1 class='text-center text-4xl border-b border-white py-4 px-4'>
-      {data?.nombres}
-      {data?.apellidos}
+      <b>{data?.nombres}
+      {data?.apellidos}</b>
    </h1>
    <h2 class='text-4xl mt-3'>{data?.puesto}</h2>
    <!-- <a
