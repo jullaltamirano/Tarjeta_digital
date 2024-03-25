@@ -5,7 +5,7 @@ const { data } = Astro.props;
 <section class='flex flex-col justify-center items-center pt-20 py-12 text-white'>
    <img
       class='w-80 h-80 rounded-full mx-auto mb-10 border-8 border-amber-500'
-      src='/user.webp'
+      src={data?.img_link || '/user.webp'}
       alt={data?.nombres}
    />
    <h1 class='text-7xl border-b border-white py-4 px-4'><b>{data?.nombres}</b> {data?.apellidos}</h1>
