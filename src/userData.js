@@ -17,8 +17,8 @@ export const userData = {
       img_link: '',
    },
    'oscar-vanegas': {
-      nombres: 'Oscar',
-      apellidos: 'Vanegas',
+      nombres: 'Oscar Julián',
+      apellidos: 'Vanegas Guzmán',
       puesto: 'Gerente General',
       empresa: 'Peru Masivo',
       codigo_telefono: '+51',

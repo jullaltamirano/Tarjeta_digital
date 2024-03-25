@@ -1,4 +1,5 @@
 ---
+import NameComponent from '../components/NameComponent';
 import QRCodeComponent from '../components/QRCodeComponent';
 
 const { data } = Astro.props;
@@ -20,7 +21,7 @@ const { data } = Astro.props;
       src={data?.img_link || '/user.webp'}
       alt={data?.nombres}
    />
-   <h1 class='text-7xl border-b border-white py-4 px-4'><b>{data?.nombres}</b> {data?.apellidos}</h1>
+   <NameComponent data={data} />
    <h2 class='text-4xl mt-3'>{data?.puesto}</h2>
    <a
       href=`tel:${data?.telefono}`
