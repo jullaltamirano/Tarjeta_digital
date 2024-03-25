@@ -22,7 +22,7 @@ export const userData = {
       puesto: 'Gerente General',
       empresa: 'Peru Masivo',
       codigo_telefono: '+51',
-      telefono: 900000000,
+      telefono: 983321933,
       telefono_empresa: '01-2003000',
       whatsapp: 'https://wa.link/uh623u',
       anexo: '1201',
