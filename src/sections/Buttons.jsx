@@ -82,21 +82,58 @@ export const Buttons = (props) => {
    ];
 
    return (
-      <section className='grid grid-cols-4 pt-8 py-16 px-6 md:px-20 lg:px-32'>
-         {buttonsData &&
-            buttonsData.map((btn) => (
-               <div
-                  key={btn.label}
-                  className='col-span-2 flex justify-center mb-12'>
-                  <ButtonAction
-                     label={btn.label}
-                     btnFunction={btn.function}
-                     icon={btn.icon}
-                     href={btn.href}
-                  />
-               </div>
-            ))}
-         <div className='col-span-4 flex justify-center mb-12'>
+      <section className='grid grid-cols-12 pt-12 py-16 px-6 md:px-20 lg:px-32'>
+         {/* {buttonsData &&
+            buttonsData.map((btn) => ( */}
+         <div className='col-span-1'></div>
+         <div
+            key={buttonsData[0].label}
+            className='col-span-5 flex justify-center items-center h-[320px]'>
+            <ButtonAction
+               label={buttonsData[0].label}
+               btnFunction={buttonsData[0].function}
+               icon={buttonsData[0].icon}
+               href={buttonsData[0].href}
+            />
+         </div>
+         <div
+            key={buttonsData[1].label}
+            className='col-span-5 flex justify-center items-center h-[320px]'>
+            <ButtonAction
+               label={buttonsData[1].label}
+               btnFunction={buttonsData[1].function}
+               icon={buttonsData[1].icon}
+               href={buttonsData[1].href}
+            />
+         </div>
+         <div className='col-span-1'></div>
+         <div
+            key={buttonsData[2].label}
+            className='col-span-3 flex justify-center items-center h-[320px]'>
+            <ButtonAction
+               label={buttonsData[2].label}
+               btnFunction={buttonsData[2].function}
+               icon={buttonsData[2].icon}
+               href={buttonsData[2].href}
+            />
+         </div>
+         <img
+            class='col-span-6 w-80 h-80 rounded-full mx-auto border-8 border-amber-500'
+            src={data?.img_link || '/user.webp'}
+            alt={data?.nombres}
+         />
+         <div
+            key={buttonsData[3].label}
+            className='col-span-3 flex justify-center items-center h-[320px]'>
+            <ButtonAction
+               label={buttonsData[3].label}
+               btnFunction={buttonsData[3].function}
+               icon={buttonsData[3].icon}
+               href={buttonsData[3].href}
+            />
+         </div>
+         {/* ))} */}
+         <div className='col-span-12 flex justify-center items-center h-[320px] mt-10'>
             <ButtonAction
                label={'Información de Empresa'}
                btnFunction={handleInfoClick}
