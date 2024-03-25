@@ -12,13 +12,17 @@ export function getStaticPaths() {
 ---
 
 <div class='bg-black'>
-   <div class='min-h-screen bg-portada'>
-      <Profile data={userData[user]} />
-      <Buttons
-         client:visible
-         data={userData[user]}
-      />
-      <Footer />
+   <div class='min-h-screen bg-portada flex flex-col justify-between'>
+      <div>
+         <Profile data={userData[user]} />
+         <Buttons
+            client:visible
+            data={userData[user]}
+         />
+      </div>
+      <div>
+         <Footer />
+      </div>
    </div>
 </div>
 
