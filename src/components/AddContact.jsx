@@ -19,17 +19,15 @@ export const AddContact = () => {
          link.href = 'data:text/vcard;charset=utf-8,' + encodeURIComponent(vCardData);
          link.target = '_blank';
          link.rel = 'noopener noreferrer';
-         link.download = 'contacto.vcf';
-         document.body.appendChild(link);
+         link.download = 'nuevo_contacto.vcf';
          link.click();
-         document.body.removeChild(link);
       } else {
          // Si no es un dispositivo iOS, utiliza Blob
          const blob = new Blob([vCardData], { type: 'text/vcard' });
          const url = window.URL.createObjectURL(blob);
          const link = document.createElement('a');
          link.href = url;
-         link.setAttribute('download', 'contacto.vcf');
+         link.setAttribute('download', 'nuevo_contacto.vcf');
          link.click();
          window.URL.revokeObjectURL(url);
       }
@@ -37,7 +35,7 @@ export const AddContact = () => {
 
    return (
       <button
-         onClick={descargarVCard}
+         onClick={handleSaveContact}
          className='px-20 py-5 rounded-full bg-zinc-100 shadow-lg text-white font-semibold text-4xl flex items-center transition-all hover:scale-105'>
          <FaCirclePlus
             size={'1.3em'}
