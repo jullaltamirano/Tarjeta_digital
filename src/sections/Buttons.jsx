@@ -153,7 +153,7 @@ export const Buttons = (props) => {
 
          {/* //* BOTÓN AGREGAR CONTACTO */}
          <div className='col-span-12 flex justify-center h-full items-end'>
-            <AddContact function={handleSaveContactBtn} />
+            <AddContact onClick={handleSaveContactBtn} />
          </div>
 
          {openModal && (
