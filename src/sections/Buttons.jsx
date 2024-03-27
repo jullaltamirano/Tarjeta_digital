@@ -45,10 +45,10 @@ export const Buttons = (props) => {
       if (navigator.contacts) {
          const contacto = navigator.contacts.create();
          contacto.displayName = `${data.nombres} ${data.apellidos}`;
+         alert(contacto);
          const telefonoArray = [];
          telefonoArray[0] = new ContactField('mobile', data.telefono, true);
          contacto.phoneNumbers = telefonoArray;
-         alert(contacto.phoneNumbers);
          contacto.save(
             function (contact) {
                alert('Contacto guardado correctamente');
