@@ -6,17 +6,16 @@ export const AddContact = () => {
       const contactData = {
          name: 'Nombre del Contacto',
          organization: 'Nombre de la Organización',
-         phone: '(123) 456-7890',
+         phone: '(123)456-7890',
          email: 'contacto@example.com',
       };
 
-      const contactURL = `data:text/x-vcard;charset=utf-8,
-  BEGIN:VCARD
-  VERSION:3.0
+      const contactURL = `BEGIN:VCARD
+  VERSION:2.1
   FN:${contactData.name}
   ORG:${contactData.organization}
-  TEL;TYPE=WORK,VOICE:${contactData.phone}
-  EMAIL;TYPE=PREF,INTERNET:${contactData.email}
+  TEL;WORK;VOICE:${contactData.phone}
+  EMAIL;INTERNET:${contactData.email}
   END:VCARD`;
 
       window.open(contactURL);
