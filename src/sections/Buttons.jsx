@@ -42,14 +42,13 @@ export const Buttons = (props) => {
    };
 
    const handleSaveContactBtn = () => {
-      alert(navigator.contacts);
       if (navigator.contacts) {
-         alert(navigator.contacts);
          const contacto = navigator.contacts.create();
          contacto.displayName = `${data.nombres} ${data.apellidos}`;
          const telefonoArray = [];
          telefonoArray[0] = new ContactField('mobile', data.telefono, true);
          contacto.phoneNumbers = telefonoArray;
+         alert(contacto.phoneNumbers);
          contacto.save(
             function (contact) {
                alert('Contacto guardado correctamente');
