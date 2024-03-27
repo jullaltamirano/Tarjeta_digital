@@ -2,35 +2,24 @@ import { useState } from 'react';
 import { FaCirclePlus } from 'react-icons/fa6';
 
 export const AddContact = () => {
-   const [vCardData] = useState(
-      `BEGIN:VCARD
-       VERSION:3.0
-       FN:Nombre del Contacto
-       ORG:Nombre de la Organización
-       TEL;TYPE=WORK,VOICE:(123) 456-7890
-       EMAIL;TYPE=PREF,INTERNET:contacto@example.com
-       END:VCARD`
-   );
-
    const handleSaveContact = () => {
-      if (navigator.userAgent.match(/(iPod|iPhone|iPad)/)) {
-         // Si es un dispositivo iOS, utiliza data URI
-         const link = document.createElement('a');
-         link.href = 'data:text/vcard;charset=utf-8,' + encodeURIComponent(vCardData);
-         link.target = '_blank';
-         link.rel = 'noopener noreferrer';
-         link.download = 'nuevo_contacto.vcf';
-         link.click();
-      } else {
-         // Si no es un dispositivo iOS, utiliza Blob
-         const blob = new Blob([vCardData], { type: 'text/vcard' });
-         const url = window.URL.createObjectURL(blob);
-         const link = document.createElement('a');
-         link.href = url;
-         link.setAttribute('download', 'nuevo_contacto.vcf');
-         link.click();
-         window.URL.revokeObjectURL(url);
-      }
+      const contactData = {
+         name: 'Nombre del Contacto',
+         organization: 'Nombre de la Organización',
+         phone: '(123) 456-7890',
+         email: 'contacto@example.com',
+      };
+
+      const contactURL = `data:text/x-vcard;charset=utf-8,
+  BEGIN:VCARD
+  VERSION:3.0
+  FN:${contactData.name}
+  ORG:${contactData.organization}
+  TEL;TYPE=WORK,VOICE:${contactData.phone}
+  EMAIL;TYPE=PREF,INTERNET:${contactData.email}
+  END:VCARD`;
+
+      window.open(contactURL);
    };
 
    return (
