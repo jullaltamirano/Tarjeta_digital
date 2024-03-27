@@ -1,25 +1,10 @@
 import { useState } from 'react';
 import { FaCirclePlus } from 'react-icons/fa6';
 
-export const AddContact = () => {
+export const AddContact = (props) => {
+   const { data } = props;
    const handleSaveContact = () => {
-      const contactData = {
-         name: 'Nombre del Contacto',
-         organization: 'Nombre de la Organización',
-         phone: '(123)456-7890',
-         email: 'contacto@example.com',
-      };
-
-      const contactURL = `data:text/vcard;charset=utf-8,
-      BEGIN:VCARD
-      VERSION:2.1
-      FN:${contactData.name}
-      ORG:${contactData.organization}
-      TEL;WORK;VOICE:${contactData.phone}
-      EMAIL;INTERNET:${contactData.email}
-      END:VCARD`;
-
-      window.open(contactURL);
+      window.location.href = `tel:${data.codigo_telefono}${data.telefono}`;
    };
 
    return (
