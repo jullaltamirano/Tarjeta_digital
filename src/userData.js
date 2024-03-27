@@ -8,6 +8,7 @@ export const userData = {
       telefono: 983321933,
       telefono_empresa: '01-2003000',
       whatsapp: 'https://wa.link/rw4rpn',
+      linkedin: '',
       anexo: '1201',
       email: 'oscarvg@perumasivo.com',
       direccion: 'Av. Antonio Miroquezada #457 Int 1201',

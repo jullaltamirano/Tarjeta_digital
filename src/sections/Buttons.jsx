@@ -6,8 +6,10 @@ import { MdEmail } from 'react-icons/md';
 import { IoLogoWhatsapp } from 'react-icons/io';
 import { IoMdShare } from 'react-icons/io';
 import { FaBuilding } from 'react-icons/fa';
+import { FaLinkedin } from 'react-icons/fa';
 
 import { ButtonAction } from '../components/ButtonAction';
+import { AddContact } from '../components/AddContact';
 
 export const Buttons = (props) => {
    const { data } = props;
@@ -27,6 +29,10 @@ export const Buttons = (props) => {
       window.open(data.whatsapp, '_blank');
    };
 
+   const handleInClick = () => {
+      window.open(data.linkedin, '_blank');
+   };
+
    const handleShareClick = () => {
       setOpenModal(true);
    };
@@ -35,14 +41,35 @@ export const Buttons = (props) => {
       setOpenModal2(true);
    };
 
+   const handleSaveContactBtn = () => {
+      if (navigator.contacts) {
+         const contacto = navigator.contacts.create();
+         contacto.displayName = `${data.nombres} ${data.apellidos}` ;
+         const telefonoArray = [];
+         telefonoArray[0] = new ContactField('mobile', data.telefono, true);
+         contacto.phoneNumbers = telefonoArray;
+         contacto.save(
+            function (contact) {
+               alert('Contacto guardado correctamente');
+            },
+            function (error) {
+               alert('Error al guardar el contacto: ' + error.code);
+            }
+         );
+      } else {
+         alert('Tu dispositivo no admite guardar contactos.');
+      }
+   };
+
    const buttonsData = [
       {
          label: 'Llamar',
          function: handleLlamarClick,
+         target: '',
          icon: (
             <BiSolidPhoneCall
-               size={'7em'}
-               className='text-blue-900 hover:text-white'
+               size={'4em'}
+               className='text-white hover:text-amber-500'
             />
          ),
          href: `tel:${data.codigo_telefono}${data.telefono}`,
@@ -50,10 +77,11 @@ export const Buttons = (props) => {
       {
          label: 'Correo',
          function: handleEmailClick,
+         target: '',
          icon: (
             <MdEmail
-               size={'7em'}
-               className='text-blue-900 hover:text-white'
+               size={'4em'}
+               className='text-white hover:text-amber-500'
             />
          ),
          href: `mailto:${data.email}`,
@@ -61,96 +89,70 @@ export const Buttons = (props) => {
       {
          label: 'Whatsapp',
          function: handleWhatsappClick,
+         target: '_blank',
          icon: (
             <IoLogoWhatsapp
-               size={'7em'}
-               className='text-blue-900 hover:text-white'
+               size={'4em'}
+               className='text-white hover:text-amber-500'
             />
          ),
          href: data.whatsapp,
       },
       {
+         label: 'LinkedIn',
+         function: handleInClick,
+         target: '',
+         icon: (
+            <FaLinkedin
+               size={'4em'}
+               className='text-white hover:text-amber-500'
+            />
+         ),
+      },
+      {
          label: 'Compartir QR',
          function: handleShareClick,
+         target: '',
          icon: (
             <IoMdShare
-               size={'7em'}
-               className='text-blue-900 hover:text-white'
+               size={'4em'}
+               className='text-white hover:text-amber-500'
+            />
+         ),
+      },
+      {
+         label: 'Información Empresa',
+         function: handleInfoClick,
+         target: '',
+         icon: (
+            <FaBuilding
+               size={'4em'}
+               className='text-white hover:text-amber-500'
             />
          ),
       },
    ];
 
    return (
-      <section className='grid grid-cols-12 pt-12 py-16 px-6 md:px-20 lg:px-32'>
-         {/* {buttonsData &&
-            buttonsData.map((btn) => ( */}
-         <div className='col-span-1'></div>
-         <div
-            key={buttonsData[0].label}
-            className='col-span-5 flex justify-center items-center h-[320px]'>
-            <ButtonAction
-               label={buttonsData[0].label}
-               btnFunction={buttonsData[0].function}
-               icon={buttonsData[0].icon}
-               href={buttonsData[0].href}
-            />
-         </div>
-         <div
-            key={buttonsData[1].label}
-            className='col-span-5 flex justify-center items-center h-[320px]'>
-            <ButtonAction
-               label={buttonsData[1].label}
-               btnFunction={buttonsData[1].function}
-               icon={buttonsData[1].icon}
-               href={buttonsData[1].href}
-            />
-         </div>
-         <div className='col-span-1'></div>
-         <div
-            key={buttonsData[2].label}
-            className='col-span-3 flex justify-center items-center h-[320px]'>
-            <ButtonAction
-               label={buttonsData[2].label}
-               btnFunction={buttonsData[2].function}
-               icon={buttonsData[2].icon}
-               href={buttonsData[2].href}
-            />
-         </div>
-         <img
-            class='col-span-6 w-80 h-80 rounded-full mx-auto border-8 border-amber-500'
-            src={data?.img_link || '/user.webp'}
-            alt={data?.nombres}
-         />
-         <div
-            key={buttonsData[3].label}
-            className='col-span-3 flex justify-center items-center h-[320px]'>
-            <ButtonAction
-               label={buttonsData[3].label}
-               btnFunction={buttonsData[3].function}
-               icon={buttonsData[3].icon}
-               href={buttonsData[3].href}
-            />
-         </div>
-         {/* ))} */}
-         <div className='col-span-12 flex justify-center items-center h-[320px] mt-10'>
-            <ButtonAction
-               label={'Información de Empresa'}
-               btnFunction={handleInfoClick}
-               icon={
-                  <FaBuilding
-                     size={'7em'}
-                     className='text-blue-900 hover:text-white'
+      <section className='grid grid-cols-12 pt-12 py-16 px-6 md:px-32'>
+         {buttonsData &&
+            buttonsData.map((btn) => (
+               <div
+                  key={btn.label}
+                  className='col-span-2 flex justify-center items-center h-[320px]'>
+                  <ButtonAction
+                     label={btn.label}
+                     btnFunction={btn.function}
+                     icon={btn.icon}
+                     href={btn.href}
                   />
-               }
-               href={undefined}
-            />
-         </div>
+               </div>
+            ))}
 
          {/* //* BOTÓN AGREGAR CONTACTO */}
-         {/* <div className='col-span-4 flex justify-center h-full items-end'>
-            <ButtonDownloadPdf />
-         </div> */}
+         <div className='col-span-12 flex justify-center h-full items-end'>
+            <AddContact function={handleSaveContactBtn} />
+         </div>
 
          {openModal && (
             <div className='fixed left-0 top-0 flex h-full w-full items-center justify-center bg-black bg-opacity-50 py-10'>
