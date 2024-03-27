@@ -41,27 +41,6 @@ export const Buttons = (props) => {
       setOpenModal2(true);
    };
 
-   const handleSaveContactBtn = () => {
-      if (navigator.contacts) {
-         const contacto = navigator.contacts.create();
-         alert(contacto);
-         contacto.displayName = `${data.nombres} ${data.apellidos}`;
-         const telefonoArray = [];
-         telefonoArray[0] = new ContactField('mobile', data.telefono, true);
-         contacto.phoneNumbers = telefonoArray;
-         contacto.save(
-            function (contact) {
-               alert('Contacto guardado correctamente');
-            },
-            function (error) {
-               alert('Error al guardar el contacto: ' + error.code);
-            }
-         );
-      } else {
-         alert('Tu dispositivo no admite guardar contactos.');
-      }
-   };
-
    const buttonsData = [
       {
          label: 'Llamar',
@@ -152,7 +131,7 @@ export const Buttons = (props) => {
 
          {/* //* BOTÓN AGREGAR CONTACTO */}
          <div className='col-span-12 flex justify-center h-full items-end'>
-            <AddContact onClick={handleSaveContactBtn} />
+            <AddContact />
          </div>
 
          {openModal && (
