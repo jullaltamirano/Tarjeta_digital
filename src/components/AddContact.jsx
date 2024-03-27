@@ -10,13 +10,14 @@ export const AddContact = () => {
          email: 'contacto@example.com',
       };
 
-      const contactURL = `BEGIN:VCARD
-  VERSION:2.1
-  FN:${contactData.name}
-  ORG:${contactData.organization}
-  TEL;WORK;VOICE:${contactData.phone}
-  EMAIL;INTERNET:${contactData.email}
-  END:VCARD`;
+      const contactURL = `data:text/vcard;charset=utf-8,
+      BEGIN:VCARD
+      VERSION:2.1
+      FN:${contactData.name}
+      ORG:${contactData.organization}
+      TEL;WORK;VOICE:${contactData.phone}
+      EMAIL;INTERNET:${contactData.email}
+      END:VCARD`;
 
       window.open(contactURL);
    };
