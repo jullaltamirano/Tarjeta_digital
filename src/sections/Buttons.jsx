@@ -79,17 +79,6 @@ export const Buttons = (props) => {
          href: data.whatsapp,
       },
       {
-         label: 'LinkedIn',
-         function: handleInClick,
-         target: '',
-         icon: (
-            <FaLinkedin
-               size={'4em'}
-               className='text-white hover:text-amber-500'
-            />
-         ),
-      },
-      {
          label: 'Compartir QR',
          function: handleShareClick,
          target: '',
@@ -114,7 +103,7 @@ export const Buttons = (props) => {
    ];
 
    return (
-      <section className='grid grid-cols-12 pt-12 py-16 px-6 md:px-32'>
+      <section className='grid grid-cols-10 pt-12 py-16 px-6 md:px-32'>
          {buttonsData &&
             buttonsData.map((btn) => (
                <div
